@@ -1,6 +1,12 @@
 <?php
 
 include("includes/db.php");
+if(!isset($_SESSION['user_email'])){
+
+  echo "<script>window.open('login.php','_self')</script>";
+
+}
+else{
 
  ?>
 
@@ -13,7 +19,7 @@ include("includes/db.php");
 <body bgcolor="skyblue">
   <form action="insert_product.php" method="post" enctype="multipart/form-data">
 
-    <table align="center" width="700" border="2" bgcolor="orange">
+    <table align="center" width="794" border="2" bgcolor="#00cc00">
 
       <tr align="center">
         <td colspan="7"><h2>Insert New Post Here</h2></td>
@@ -104,9 +110,9 @@ include("includes/db.php");
   if(isset($_POST['insert_post'])){
 
     //getting the text data from the fields
+    $product_title = $_POST['product_title'];
     $product_cat = $_POST['product_cat'];
     $product_brand = $_POST['product_brand'];
-    $product_title = $_POST['product_title'];
     $product_price = $_POST['product_price'];
     $product_desc = $_POST['product_desc'];
     $product_keywords = $_POST['product_keywords'];
@@ -125,10 +131,11 @@ include("includes/db.php");
     if($insert_pro){
 
       echo "<script>alert('Product Has Been Inserted!')</script>";
-      echo "<script>window.open('insert_product.php','_self')</script>";
+      echo "<script>window.open('index.php?insert_product','_self')</script>";
 
     }
 
   }
 
  ?>
+ <?php } ?>
