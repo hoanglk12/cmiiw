@@ -1,117 +1,19 @@
+
 <?php
 session_start();
 include("functions/functions.php");
-include("includes/db.php");
- ?>
+?>
+<?php require 'shared/header.php'; ?>
 
-<html>
-<head>
-  <title>My Online Shop </title>
-  <link rel="stylesheet" href="styles/style.css" media="all" />
-</head>
-
-<body>
-  <!--Main Container starts here-->
-<div class="main_wrapper">
-
-<!--Header starts here-->
-  <div class="header_wrapper">
-
-    <a href="index.php"><img id="logo" src="images/templatemo_logo.png" /></a>
-    <img id="banner" src="images/ad_banner.jpg" />
-  </div>
-  <!--Header ends here-->
-
-  <!--Navagation Bar starts-->
-  <div class="menubar">
-    <ul id="menu">
-      <li><a href="index.php">Home</a></li>
-      <li><a href="all_products.php">All Products</a></li>
-      <li><a href="customer/my_account.php">My Account</a></li>
-      <li><a href="#">Sign Up</a></li>
-      <li><a href="cart.php">Shopping Cart</a></li>
-      <li><a href="#">Contact Us</a></li>
-    </ul>
-
-<div id="form">
-  <form method="get" action="results.php" enctype="multipart/form-data">
-    <input type="text" name="user_query" placeholder="Search Product"/>
-    <input type="submit" name="search" value="Search" />
-</form>
-
-</div>
-
-  </div>
-<!--Navagation Bar ends-->
-
-<!--Content wrapper starts-->
-  <div class="content_wrapper">
-
-      <div id="sidebar">
-        <div id="sidebar_title">Categories</div>
-
-          <ul id="cats">
-              <?php getCats();?>
-          </ul>
-
-          <div id="sidebar_title">Brands</div>
-
-            <ul id="cats">
-
-              <?php getBrands();?>
-
-
-            </ul>
-
-
-      </div>
-
-      <div id="content_area">
-
-        <?php cart(); ?>
-
-        <div id="shopping_cart">
-
-            <span style="float:right;font-size:18px;padding:5px;line-height:40px;">
-
-              Welcome Guest! <b style="color:yellow">Shopping Cart -</b> Total Items: <?php total_items(); ?> Total Price: <?php total_price(); ?><a href="cart.php" style="color:yellow;"> Go to Cart</a>
-
-
-            </span>
-
-        </div>
-
-        <form action="customer_register.php" method="post" enctype="multipart/form-data">
-
-          <table align="center" width="750">
-
-            <tr align="center">
-              <td colspan="6"><h2>Create an Account</h2></td>
-            </tr>
-
-            <tr>
-              <td align="right">Customer Name:</td>
-              <td><input type="text" name="c_name" required=""/></td>
-            </tr>
-
-            <tr>
-              <td align="right">Customer Email:</td>
-              <td><input type="text" name="c_email" required=""/></td>
-            </tr>
-
-            <tr>
-              <td align="right">Customer Password:</td>
-              <td><input type="password" name="c_pass" required=""/></td>
-            </tr>
-
-            <tr>
-              <td align="right">Customer Image:</td>
-              <td><input type="file" name="c_image" required=""/></td>
-            </tr>
-
-            <tr>
-              <td align="right">Customer Country:</td>
-              <td>
+<main class="site-content">
+<div class="row">
+<div class="col-sm-4 col-sm-offset-1">
+<div class="signup-form">
+<h2>Create an account</h2>
+        <form method="POST" action="customer_register.php">
+            <input type="text" name="c_name" placeholder="Customer name" required=""/>
+            <input type="email" name="c_email" placeholder="Customer mail" required=""/>
+            <input type="password" name="c_pass" placeholder="Customer password" required=""/> 
                 <select name="c_country">
                   <option>Select a Country</option>
                   <option>Australia</option>
@@ -124,48 +26,18 @@ include("includes/db.php");
                   <option>Thailand</option>
                   <option>VietNam</option>
                 </select>
-              </td>
-            </tr>
 
-            <tr>
-              <td align="right">Customer City:</td>
-              <td><input type="text" name="c_city" required=""/></td>
-            </tr>
-
-            <tr>
-              <td align="right">Customer Contact:</td>
-              <td><input type="text" name="c_contact" required=""/></td>
-            </tr>
-
-            <tr>
-              <td align="right">Customer Address:</td>
-              <td><input type="text" name="c_address" required=""/></textarea></td>
-            </tr>
-
-            <tr align="center">
-              <td colspan="6"><input type="submit" name="register" value="Create Account" /></td>
-            </tr>
-
-          </table>
-
+            <input type="text" name="c_city" placeholder="Customer city" required=""/> 
+            <input type="text" name="c_contact" placeholder="Customer phont" required=""/> 
+            <input type="text" name="c_address" placeholder="Customer address" required=""/>
+            <input type="file" name="c_image" required=""/ style="background-color: transparent;">
+            <button name="register" type="submit" class="btn btn-default">Create Account</button>
         </form>
-
-
       </div>
-  </div>
-<!--Content wrapper ends-->
+      </div>
+      </div>
 
 
-  <div id="footer">
-
-    <h2 style="text-align:center; padding-top:30px;">&copy; 2016 by www.goshirt.com</h2>
-
-  </div>
-
-</div>
-  <!--Main Container ends here-->
-</body>
-</html>
 <?php
 
 if(isset($_POST['register'])){
@@ -211,3 +83,7 @@ if($check_cart == 0){
 }
 
  ?>
+
+
+ </main>
+<?php require 'shared/footer.php'; ?>

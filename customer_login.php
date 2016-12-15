@@ -2,41 +2,21 @@
 include("includes/db.php");
 
  ?>
-
-<div>
-
-  <form method="post" action="">
-
-    <table width="500" align="center" bgcolor="skyblue">
-
-      <tr align="center">
-        <td colspan="3"><h2>Login or Register to Buy!</h2></td>
-      </tr>
-
-      <tr>
-        <td align="right"><b>Email:</b></td>
-        <td><input type="text" name="email" placeholder="enter email" required=""/></td>
-      </tr>
-
-      <tr>
-        <td align="right"><b>Password:</b></td>
-        <td><input type="password" name="pass" placeholder="enter password" required=""/></td>
-      </tr>
-
-      <tr align="center">
-        <td colspan="3"><a href="checkout.php?forgot_pass">Forgot Password ?</a></td>
-      </tr>
-
-      <tr align="center">
-        <td colspan="3"><input type="submit" name="login" value="Login" /></td>
-      </tr>
-
-    </table>
-
-    <h2 style="float:right;padding-right:20px;"><a href="customer_register.php" style="text-decoration:none;">New? Register Here</a></h2>
-
-  </form>
-
+ <main class="site-content">
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-1">
+    <div class="login-form"><!--login form-->
+        <h2>Login to your account</h2>
+        <form method="POST" action="">
+          <input type="text" name="email" placeholder="Enter your email" />
+          <input type="password" name="pass" placeholder="Enter your password" />
+          <button name="login" type="submit" class="btn btn-default" value="Login">Login</button>
+        </form>   
+        </div>
+        </div>
+        <div class="col-sm-1">
+          <h2 class="or"><a href="customer_register.php">Register?</a></h2>
+      <!--/login form-->
   <?php
 
   if(isset($_POST['login'])){
@@ -68,7 +48,7 @@ include("includes/db.php");
 
       $_SESSION['customer_email'] = $c_email;
       echo "<script>alert('You logged in successfully!')</script>";
-      echo "<script>window.open('customer/my_account.php','_self')</script>";
+      echo "<script>window.open('index.php','_self')</script>";
 
     }else{
 
@@ -82,3 +62,4 @@ include("includes/db.php");
 
    ?>
 </div>
+</main>
