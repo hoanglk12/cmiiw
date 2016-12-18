@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+include("functions/functions.php");
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +76,7 @@ session_start();
 
                                     }else{
 
-                                        echo "<a href='customer/my_account.php'><i class='fa fa-user'></i>Account</a>";
+                                        echo "<a href='index.php'><i class='fa fa-user'></i>Account</a>";
 
                                     }
 
@@ -121,8 +122,7 @@ session_start();
                                     <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="all_products.php">Products</a></li>
-                                            <li><a href="product-details.html">Product Details</a></li> 
-                                            <li><a href="cart.html">Cart</a></li> 
+                                            <li><a href="cart.php">Cart</a></li> 
                                         </ul>
                                     </li> 
                                     <li class="dropdown"><a href="#">Categories<i class="fa fa-angle-down"></i></a>
@@ -135,23 +135,24 @@ session_start();
                                             <li><?php getBrands();?></li>
                                         </ul>
                                     </li> 
-                                    <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                                    <!-- <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="blog.html">Blog List</a></li>
                                             <li><a href="blog-single.html">Blog Single</a></li>
                                         </ul>
-                                    </li> 
+                                    </li>  -->
 
                                     <li><a href="contact-us.html">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div class="search_box pull-right">
-                                <input type="text" placeholder="Search"/>
-                            </div>
+                            
+
+
                         </div>
                     </div>
                 </div>
             </div><!--/header-bottom-->
         </header><!--/header-->
+
