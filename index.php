@@ -1,8 +1,4 @@
-
-<?php
-session_start();
-include("functions/functions.php");
-?>
+    
 <?php require 'shared/header.php'; ?>
 
 <main class="site-content">
@@ -70,8 +66,6 @@ include("functions/functions.php");
         <div class="features_items"><!--features_items-->
           <h2 class="title text-center">Features Items</h2>
           <?php getPro(); ?>
-          <?php getCatPro(); ?>
-          <?php getBrandPro(); ?>
         </div>
       </div><!--features_items-->
     </div>
