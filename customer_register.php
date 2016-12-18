@@ -1,8 +1,4 @@
 
-<?php
-session_start();
-include("functions/functions.php");
-?>
 <?php require 'shared/header.php'; ?>
 
 <main class="site-content">
@@ -28,7 +24,7 @@ include("functions/functions.php");
                 </select>
 
             <input type="text" name="c_city" placeholder="Customer city" required=""/> 
-            <input type="text" name="c_contact" placeholder="Customer phont" required=""/> 
+            <input type="text" name="c_contact" placeholder="Customer phone" required=""/> 
             <input type="text" name="c_address" placeholder="Customer address" required=""/>
             <input type="file" name="c_image" required=""/ style="background-color: transparent;">
             <button name="register" type="submit" class="btn btn-default">Create Account</button>
