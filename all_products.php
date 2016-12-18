@@ -1,14 +1,14 @@
-<?php
-include("functions/functions.php");
-?>
+
 <?php require 'shared/header.php'; ?>
 
+
+<main class="site-content">
 <section>
   <div class="container">
     <div class="breadcrumbs">
         <ol class="breadcrumb">
           <li><a href="index.php">Home</a></li>
-          <li class="active">Products</li>
+          <li class="active">Product</li>
         </ol>
       </div>
     <div class="row">
@@ -68,4 +68,6 @@ include("functions/functions.php");
   </div>
 </section>
 
+
+</main>
 <?php require 'shared/footer.php'; ?>
