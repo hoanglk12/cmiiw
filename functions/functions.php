@@ -136,7 +136,7 @@ function getCats(){
       $cat_id = $row_cats['cat_id'];
       $cat_title = $row_cats['cat_title'];
 
-echo "<li><a href='index.php?cat=$cat_id'>$cat_title</a></li>";
+echo "<li><a href='shop.php?cat=$cat_id'>$cat_title</a></li>";
 
   }
 
@@ -157,7 +157,7 @@ function getBrands(){
       $brand_id = $row_brands['brand_id'];
       $brand_title = $row_brands['brand_title'];
 
-echo "<li><a href='index.php?brand=$brand_id'>$brand_title</a></li>";
+echo "<li><a href='shop.php?brand=$brand_id'>$brand_title</a></li>";
 
   }
 
@@ -184,23 +184,29 @@ function getPro(){
     $pro_image = $row_pro['product_image'];
 
     echo "
-          <div id='single_product'>
+        <div class='col-sm-4'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                    <div class='productinfo text-center'>
 
-            <h3 style='text-align:center;'>$pro_title</h3>
+            <img src='admin_area/product_images/$pro_image'/>
 
-            <img src='admin_area/product_images/$pro_image' width='180' height='180' />
+            <h2>$ $pro_price</h2>
 
-            <p style='text-align:center'><b>$ $pro_price</b></p>
+            <p>$pro_title</p>
 
-            <a href='details.php?pro_id=$pro_id'style='float:left;'>Details</a>
+            <a href='details.php?pro_id=$pro_id' class='btn btn-default add-to-cart'>Details</a>
 
-            <a href='index.php?add_cart=$pro_id'><button style='float:right;'>Add to cart</button></a>
+            <a href='index.php?add_cart=$pro_id' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to cart</a> 
 
+          </div>
+          </div>
+          </div>
           </div>
     ";
 
+        
       }
-
     }
 
   }
@@ -238,18 +244,24 @@ function getCatPro(){
 
 
     echo "
-          <div id='single_product'>
+        <div class='col-sm-4'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                    <div class='productinfo text-center'>
 
-            <h3 style='text-align:center;'>$pro_title</h3>
+            <img src='admin_area/product_images/$pro_image'/>
 
-            <img src='admin_area/product_images/$pro_image' width='180' height='180' />
+            <h2>$ $pro_price</h2>
 
-            <p style='text-align:center'><b>$ $pro_price</b></p>
+            <p>$pro_title</p>
 
-            <a href='details.php?pro_id=$pro_id'style='float:left;'>Details</a>
+            <a href='details.php?pro_id=$pro_id' class='btn btn-default add-to-cart'>Details</a>
 
-            <a href='index.php?pro_id=$pro_id'><button style='float:right;'>Add to cart</button></a>
+            <a href='index.php?add_cart=$pro_id' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to cart</a> 
 
+          </div>
+          </div>
+          </div>
           </div>
     ";
 
@@ -290,20 +302,27 @@ function getBrandPro(){
 
 
     echo "
-          <div id='single_product'>
+        <div class='col-sm-4'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                    <div class='productinfo text-center'>
 
-            <h3 style='text-align:center;'>$pro_title</h3>
+            <img src='admin_area/product_images/$pro_image'/>
 
-            <img src='admin_area/product_images/$pro_image' width='180' height='180' />
+            <h2>$ $pro_price</h2>
 
-            <p style='text-align:center'><b>$ $pro_price</b></p>
+            <p>$pro_title</p>
 
-            <a href='details.php?pro_id=$pro_id'style='float:left;'>Details</a>
+            <a href='details.php?pro_id=$pro_id' class='btn btn-default add-to-cart'>Details</a>
 
-            <a href='index.php?pro_id=$pro_id'><button style='float:right;'>Add to cart</button></a>
+            <a href='index.php?add_cart=$pro_id' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to cart</a> 
 
           </div>
+          </div>
+          </div>
+          </div>
     ";
+
 
         }
 
