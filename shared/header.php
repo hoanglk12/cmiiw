@@ -147,7 +147,7 @@ include("functions/functions.php");
                             </div>
                         </div>
                         <div class="col-sm-3">
-                           
+                           <div class="search_box pull-right">
   <form method="get" action="results.php" enctype="multipart/form-data">
     <input class="btn btn-default" type="text" name="user_query" placeholder="Search Product"/>
     <button class="btn btn-danger" style="
@@ -155,7 +155,7 @@ include("functions/functions.php");
     border-color: #fec880;
 " input type="submit" name="search">Search</button>
 </form>
-
+                                        </div>
                         </div>
                     </div>
                 </div>
