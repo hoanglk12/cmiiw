@@ -1,84 +1,29 @@
-<?php
-include("functions/functions.php");
- ?>
 
-<html>
-<head>
-  <title>My Online Shop </title>
-  <link rel="stylesheet" href="styles/style.css" media="all" />
-</head>
-
-<body>
-  <!--Main Container starts here-->
-<div class="main_wrapper">
-
-<!--Header starts here-->
-  <div class="header_wrapper">
-
-    <a href="index.php"><img id="logo" src="images/templatemo_logo.png" /></a>
-    <img id="banner" src="images/ad_banner.jpg" />
-  </div>
-  <!--Header ends here-->
-
-  <!--Navagation Bar starts-->
-  <div class="menubar">
-    <ul id="menu">
-      <li><a href="index.php">Home</a></li>
-      <li><a href="all_products.php">All Products</a></li>
-      <li><a href="customer/my_account.php">My Account</a></li>
-      <li><a href="#">Sign Up</a></li>
-      <li><a href="cart.php">Shopping Cart</a></li>
-      <li><a href="#">Contact Us</a></li>
-    </ul>
-
-<div id="form">
-  <form method="get" action="results.php" enctype="multipart/form-data">
-    <input type="text" name="user_query" placeholder="Search Product"/>
-    <input type="submit" name="search" value="Search" />
-</form>
-
-</div>
-
-  </div>
-<!--Navagation Bar ends-->
-
-<!--Content wrapper starts-->
-  <div class="content_wrapper">
-
-      <div id="sidebar">
-        <div id="sidebar_title">Categories</div>
-
-          <ul id="cats">
-              <?php getCats();?>
-          </ul>
-
-          <div id="sidebar_title">Brands</div>
-
-            <ul id="cats">
-
-              <?php getBrands();?>
+<?php require 'shared/header.php'; ?>
 
 
-            </ul>
-
-
+<main class="site-content">
+<section>
+  <div class="container">
+    <div class="breadcrumbs">
+        <ol class="breadcrumb">
+          <li><a href="index.php">Home</a></li>
+        </ol>
+      </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="left-sidebar">
+          <div class="shipping text-center"><!--shipping-->
+            <img src="images/home/shipping.jpg" alt="" />
+          </div><!--/shipping-->
+          
+        </div>
       </div>
 
-      <div id="content_area">
-
-        <div id="shopping_cart">
-
-            <span style="float:right;font-size:18px;padding:5px;line-height:40px;">
-
-              Welcome Guest! <b style="color:yellow">Shopping Cart -</b> Total Items: Total Price: <a href="cart.php" style="color:yellow;">Go to Cart</a>
-
-
-            </span>
-
-        </div>
-
-        <div id="products_box">
-<?php
+      <div class="col-sm-9 padding-right">
+        <div class="features_items"><!--features_items-->
+          <h2 class="title text-center">Features Items</h2>
+          <?php
 
           if(isset($_GET['search'])){
 
@@ -104,19 +49,25 @@ include("functions/functions.php");
             $pro_image = $row_pro['product_image'];
 
             echo "
-                  <div id='single_product'>
+            <div class='col-sm-4'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
 
-                    <h3 style='text-align:center;'>$pro_title</h3>
+                    <img src='admin_area/product_images/$pro_image'/>
 
-                    <img src='admin_area/product_images/$pro_image' width='180' height='180' />
+                    <h2>$ $pro_price</h2>
 
-                    <p style='text-align:center'><b>$ $pro_price</b></p>
+                    <p>$pro_title</p>
 
-                    <a href='details.php?pro_id=$pro_id'style='float:left;'>Details</a>
+                    <a href='details.php?pro_id=$pro_id' class='btn btn-default add-to-cart'>Details</a>
 
-                    <a href='index.php?pro_id=$pro_id'><button style='float:right;'>Add to cart</button></a>
+                    <a href='index.php?add_cart=$pro_id' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to cart</a> 
 
                   </div>
+                </div>
+              </div>
+            </div>
             ";
 
             }
@@ -124,19 +75,11 @@ include("functions/functions.php");
 
 ?>
         </div>
-      </div>
+      </div><!--features_items-->
+    </div>
   </div>
-<!--Content wrapper ends-->
+</section>
 
 
-  <div id="footer">
-
-    <h2 style="text-align:center; padding-top:30px;">&copy; 2016 by www.goshirt.com</h2>
-
-  </div>
-
-
-</div>
-  <!--Main Container ends here-->
-</body>
-</html>
+</main>
+<?php require 'shared/footer.php'; ?>
