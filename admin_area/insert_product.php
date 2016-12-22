@@ -1,12 +1,7 @@
 <?php
 
 include("includes/db.php");
-if(!isset($_SESSION['user_email'])){
 
-  echo "<script>window.open('login.php','_self')</script>";
-
-}
-else{
 
  ?>
 
@@ -27,13 +22,13 @@ else{
 
       <tr>
         <td align="right"><b>Product Title:</b></td>
-        <td><input type="text" name="product_title" size="60" required=""/></td>
+        <td><input type="text" name="product_title" size="60"/></td>
       </tr>
 
       <tr>
         <td align="right"><b>Product Category:</b></td>
         <td>
-          <select name="product_cat" required="">
+          <select name="product_cat" >
             <option>Select a Category</option>
             <?php
               $get_cats = "select * from categories";
@@ -57,7 +52,7 @@ else{
       <tr>
         <td align="right"><b>Product Brand:</b></td>
         <td>
-          <select name="product_brand" required="">
+          <select name="product_brand" >
             <option>Select a Brand</option>
           <?php
           $get_brands = "select * from brands";
@@ -78,7 +73,7 @@ else{
 
       <tr>
         <td align="right"><b>Product Price:</b></td>
-        <td><input type="text" name="product_price" required=""/></td>
+        <td><input type="text" name="product_price" /></td>
       </tr>
 
       <tr>
@@ -87,13 +82,13 @@ else{
       </tr>
 
       <tr>
-        <td align="right"><b>Product Image:</b></td>
-        <td><input type="file" name="product_image" required=""/></td>
+        <td align="right"><b>Product Image: </b></td>
+        <td><input type="file" name="product_image" /></td>
       </tr>
 
       <tr>
         <td align="right"><b>Product Keywords:</b></td>
-        <td><input type="text" name="product_keywords" size="50" required=""/></td>
+        <td><input type="text" name="product_keywords" size="50" /></td>
       </tr>
 
       <tr align="center">
@@ -136,6 +131,3 @@ else{
     }
 
   }
-
- ?>
- <?php } ?>
