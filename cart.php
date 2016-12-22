@@ -105,9 +105,9 @@
           <div class="col-md-8">
           </div>
           <div class="col-md-4">
-               <a><input type="submit" name="update_cart" value="Update Cart" /></a>
-               <a><input type="submit" name="continue" value="Continue Shopping" /></a>
-               <a><button><a href="checkout.php" style="text-decoration:none;color:black;">Checkout</a></button></a>
+               <a><input class="btn btn-warning" type="submit" name="update_cart" value="Update Cart" /></a>
+               <a><input class="btn btn-warning" type="submit" name="continue" value="Continue Shopping" /></a>
+               <a><button class="btn btn-warning" ><a href="checkout.php" style="text-decoration:none;color:white;">Checkout</a></button></a>
              </div>
 
         </form>
@@ -134,17 +134,16 @@
 
             }
 
-}
+  }
 
           if(isset($_POST['continue'])){
 
             echo  "<script>window.open('index.php','_self')</script>";
           }
 
-}
-echo @$rem_cart = RemoveCart();
+  }
+  echo @$rem_cart = RemoveCart();
          ?>
-
         </tbody>
 
   </section> <!--/#cart_items-->
