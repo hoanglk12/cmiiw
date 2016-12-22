@@ -23,7 +23,7 @@ include("functions/functions.php");
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>
-<![endif]-->       
+<![endif]-->
 
 </head><!--/head-->
 
@@ -122,19 +122,19 @@ include("functions/functions.php");
                                     <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="all_products.php">Products</a></li>
-                                            <li><a href="cart.php">Cart</a></li> 
+                                            <li><a href="cart.php">Cart</a></li>
                                         </ul>
-                                    </li> 
+                                    </li>
                                     <li class="dropdown"><a href="#">Categories<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li> <?php getCats();?></li>
                                         </ul>
-                                    </li> 
+                                    </li>
                                     <li class="dropdown"><a href="#">Brand<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><?php getBrands();?></li>
                                         </ul>
-                                    </li> 
+                                    </li>
                                     <!-- <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="blog.html">Blog List</a></li>
@@ -142,23 +142,23 @@ include("functions/functions.php");
                                         </ul>
                                     </li>  -->
 
-                                    <li><a href="contact-us.html">Contact</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-3">
-                           <div class="search_box pull-right">
-  <form method="get" action="results.php" enctype="multipart/form-data">
-    <input class="btn btn-default" type="text" name="user_query" placeholder="Search Product"/>
-    <button class="btn btn-danger" style="
-    background-color: #fe980f;
-    border-color: #fec880;
+
+                          <div class="search_box pull-right">
+<form method="get" action="results.php" enctype="multipart/form-data">
+<input class="btn btn-default" type="text" name="user_query" placeholder="Search Product"/>
+<button class="btn btn-danger" style="
+background-color: #fe980f;
+border-color: #fec880;
 " input type="submit" name="search">Search</button>
 </form>
-                                        </div>
+                                  </div>
                         </div>
                     </div>
                 </div>
             </div><!--/header-bottom-->
         </header><!--/header-->
-
